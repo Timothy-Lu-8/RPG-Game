@@ -1,7 +1,7 @@
 #include "Tactician.h"
 
-Tactician::Tactician() : Character()
-{ // stats + seed's randomly generated values for each stat
+Tactician::Tactician() : Character() // stats + seed's randomly generated values for each stat
+{
   srand(time(0));
   int randHealth = rand() % 3;
   currentHealth = 20 + randHealth;
@@ -13,31 +13,25 @@ Tactician::Tactician() : Character()
   baseCritRate = 10;
 }
 
-void Tactician::StatLevel()
+void Tactician::StatLevel() // growths
 {
-  // growths
-  if (MaxExp() == true)
-  {
+  if (MaxExp() == true) {
     cout << "Level up!" << endl;
     SetLevel(1);
     cout << "Your level increased to " << GetLevelAfterLU() << endl;
-    if (RandomValue() <= 30)
-    {
+    if (RandomValue() <= 30) {
       maxHealth++;
       cout << "You earned a point in max HP!" << endl;
     }
-    if (RandomValue() <= 60)
-    {
+    if (RandomValue() <= 60) {
       attack++;
       cout << "You earned a point in attack!" << endl;
     }
-    if (RandomValue() <= 20)
-    {
+    if (RandomValue() <= 20) {
       defense++;
       cout << "You earned a point in defense!" << endl;
     }
-    if (RandomValue() <= 45)
-    {
+    if (RandomValue() <= 45) {
       speed++;
       cout << "You earned a point in speed!" << endl;
     }
@@ -67,25 +61,18 @@ void Tactician::SaveGame()
   fout << GetElixirAmount() << endl; // elixirs
 }
 
-int Tactician::GetWeaponMight(string weapon)
+int Tactician::GetWeaponMight(string weapon) // attack value for each weapon
 {
-  // attack value for each weapon
-  if (weapon == "Fire")
-  {
+  if (weapon == "Fire"){
     return 2;
   }
-  else if (weapon == "Elwind")
-  {
+  else if (weapon == "Elwind") {
     return 4;
   }
-  else if (weapon == "Arcthunder")
-  {
+  else if (weapon == "Arcthunder") {
     return 10;
   }
-  else
-  {
-    return 7;
-  }
+  return 7;
 }
 
 int Tactician::GetClassCrit()
@@ -95,20 +82,15 @@ int Tactician::GetClassCrit()
 
 void Tactician::SetWeapon(int stage)
 {
-  if (stage == 2)
-  {
+  if (stage == 2) {
     weapon = "Elwind";
     cout << "You picked up an Elwind tome!" << endl;
   }
-
-  else if (stage == 3)
-  {
+  else if (stage == 3) {
     weapon = "Arcthunder";
     cout << "You picked up an Arcthunder tome!" << endl;
   }
-
-  else
-  {
+  else {
     weapon = "Flux";
     cout << "You picked up a Flux tome!" << endl;
   }

@@ -1,7 +1,7 @@
 #include "Paladin.h"
 
-Paladin::Paladin() : Character()
-{ // stats + seed's randomly generated values for each stat
+Paladin::Paladin() : Character() // stats + seed's randomly generated values for each stat
+{ 
   srand(time(0));
   int randHealth = rand() % 9;
   currentHealth = 20 + randHealth;
@@ -12,31 +12,25 @@ Paladin::Paladin() : Character()
   weapon = "Bronze Axe";
 }
 
-void Paladin::StatLevel()
+void Paladin::StatLevel() // growths
 {
-  // growths
-  if (MaxExp() == true)
-  {
+  if (MaxExp() == true) {
     cout << "Level up!" << endl;
     SetLevel(1);
     cout << "Your level increased to " << GetLevelAfterLU() << endl;
-    if (RandomValue() <= 50)
-    {
+    if (RandomValue() <= 50) {
       maxHealth++;
       cout << "You earned a point in max HP!" << endl;
     }
-    if (RandomValue() <= 40)
-    {
+    if (RandomValue() <= 40) {
       attack++;
       cout << "You earned a point in attack!" << endl;
     }
-    if (RandomValue() <= 50)
-    {
+    if (RandomValue() <= 50) {
       defense++;
       cout << "You earned a point in defense!" << endl;
     }
-    if (RandomValue() <= 15)
-    {
+    if (RandomValue() <= 15) {
       speed++;
       cout << "You earned a point in speed!" << endl;
     }
@@ -68,22 +62,16 @@ void Paladin::SaveGame()
 
 int Paladin::GetWeaponMight(string weapon)
 {
-  if (weapon == "Bronze Axe")
-  {
+  if (weapon == "Bronze Axe") {
     return 4;
   }
-  else if (weapon == "Iron Axe")
-  {
+  else if (weapon == "Iron Axe") {
     return 8;
   }
-  else if (weapon == "Steel Axe")
-  {
+  else if (weapon == "Steel Axe") {
     return 12;
   }
-  else
-  {
-    return 15;
-  }
+  return 15;
 }
 
 int Paladin::GetClassCrit()
@@ -91,23 +79,17 @@ int Paladin::GetClassCrit()
   return 0;
 }
 
-void Paladin::SetWeapon(int stage)
+void Paladin::SetWeapon(int stage) // attack value for each weapon
 {
-  // attack value for each weapon
-  if (stage == 2)
-  {
+  if (stage == 2){
     weapon = "Iron Axe";
     cout << "You picked up an Iron Axe!" << endl;
   }
-
-  else if (stage == 3)
-  {
+  else if (stage == 3){
     weapon = "Steel Axe";
     cout << "You picked up a Steel Axe!" << endl;
   }
-
-  else
-  {
+  else {
     weapon = "Silver Axe";
     cout << "You picked up an Silver Axe!" << endl;
   }

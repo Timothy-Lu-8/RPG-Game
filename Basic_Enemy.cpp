@@ -1,8 +1,6 @@
 #include "Basic_Enemy.h"
 
-Basic_Enemy::Basic_Enemy(int m_hp, int c_hp, int atk, int spd, int def) : Enemy(m_hp, c_hp, atk, spd, def)
-{
-}
+Basic_Enemy::Basic_Enemy(int m_hp, int c_hp, int atk, int spd, int def) : Enemy(m_hp, c_hp, atk, spd, def){}
 
 int Basic_Enemy::BasicAttack()
 {
@@ -23,4 +21,10 @@ void Basic_Enemy::OneTurnChargeAttack() // message when basic enemy will unleash
 int Basic_Enemy::UnleashChargeAttack()
 {
   return (GetAttack() * 2);
+}
+
+void Basic_Enemy::Victory()
+{
+  cout << GetName() << " has been defeated!" << endl;
+  cout << "You earned 2000 gold!" << endl;
 }

@@ -14,10 +14,9 @@ int Enemy::GetMaxHP()
   return m_health_;
 }
 
-void Enemy::SetCurrentHP(int damageTaken)
-{//sets current hp to 0 if currenthealth - damagetaken <= 0
-  if (c_health_ - damageTaken <= 0)
-  {
+void Enemy::SetCurrentHP(int damageTaken) //sets current hp to 0 if currenthealth - damagetaken <= 0
+{
+  if (c_health_ - damageTaken <= 0) {
     c_health_ = 0;
   }
   else {

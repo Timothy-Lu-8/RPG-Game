@@ -1,8 +1,6 @@
 #include "Final_Boss.h"
 
-Final_Boss::Final_Boss(int mhp, int chp, int atk, int spd, int def) : Enemy(mhp, chp, atk, spd, def)
-{
-}
+Final_Boss::Final_Boss(int mhp, int chp, int atk, int spd, int def) : Enemy(mhp, chp, atk, spd, def){}
 
 void Final_Boss::IntroductoryDialogue()
 {

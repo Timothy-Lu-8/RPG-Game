@@ -1,6 +1,5 @@
 #ifndef PALADIN_H
 #define PALADIN_H
-#include <ctime>
 #include <cstdlib>
 #include "Character.h"
 

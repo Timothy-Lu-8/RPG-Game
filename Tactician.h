@@ -1,6 +1,5 @@
 #ifndef TACTICIAN_H
 #define TACTICIAN_H
-#include <ctime>
 #include <cstdlib>
 #include "Character.h"
 

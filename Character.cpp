@@ -35,9 +35,9 @@ void Character::SetHpAfterBattle(int maxHp)
 }
 
 // fully heals player after using elixir
-void Character::SetHpElixir(int max)
+void Character::SetHpElixir(int maxHp)
 {
-  currentHealth = max;
+  currentHealth = maxHp;
 }
 
 // function for setting hp from file read in
@@ -187,22 +187,18 @@ void Character::ElixirShop()
   cout << "Would you like to buy elixirs?" << endl;
   cout << "If you would like to purchase elixirs, press any key except q or Q to continue." << endl;
   cin >> confirm;
-  if (confirm == 'q' || confirm == 'Q')
-  {
+  if (confirm == 'q' || confirm == 'Q') {
     cout << "Decided not to buy any elixirs." << endl;
     cout << "-------------------------------------------" << endl;
   }
-  else
-  {
+  else { 
     cout << "How many would you like to purchase?" << endl;
     cin >> purchased;
-    if (purchased * 500 > GetGold())
-    { // player doesn't have enough for desired amount
+    if (purchased * 500 > GetGold()) { // player doesn't have enough for desired amount
       cout << "Insufficient gold." << endl;
       cout << "-------------------------------------------" << endl;
     }
-    else
-    {
+    else {
       SetElixirAmountAP(purchased);           // updates elixir count
       SetGoldElixirPurchase(purchased * 500); // subtracts elixirs bought * 500
       cout << purchased << " elixirs purchased." << endl;
@@ -214,15 +210,12 @@ void Character::ElixirShop()
 
 void Character::LevelUp()
 {
-  if (GetExp() >= 100)
-  {
-    if (LevelCap() == false)
-    {
+  if (GetExp() >= 100) {
+    if (LevelCap() == false) {
       SetExpAfterLU(GetExp());
     }
   }
-  if (GetLevel() == 100)
-  {
+  if (GetLevel() == 100) {
     level = 100;
     expPoints = 0;
     cout << "Max level reached." << endl;
@@ -231,8 +224,7 @@ void Character::LevelUp()
 
 bool Character::LevelCap()
 {
-  if (level == 100)
-  {
+  if (level == 100) {
     return true;
   }
   return false;
@@ -240,8 +232,7 @@ bool Character::LevelCap()
 
 bool Character::MaxExp()
 {
-  if (GetExp() >= 100)
-  {
+  if (GetExp() >= 100) {
     return true;
   }
   return false;
