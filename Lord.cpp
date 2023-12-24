@@ -43,21 +43,21 @@ void Lord::SaveGame()
 {
   string input = "";
   string fileName = "";
-  cout << "Please enter a name for the file." << endl;
+  cout << "Please enter a name for the .txt file." << endl;
   cin >> input;
   fileName = input + ".txt";
   ofstream fout(fileName);
   fout << "Lord" << endl;            // class
-  fout << GetStageNum() << endl;     // stage number
-  fout << GetLevel() << endl;        // level
-  fout << GetCurrentHp() << endl;    // chp
-  fout << GetMaxHp() << endl;        // mhp
-  fout << GetAttack() << endl;       // attack
-  fout << GetDefense() << endl;      // def
-  fout << GetSpeed() << endl;        // spd
-  fout << GetExp() << endl;          // exp
-  fout << GetGold() << endl;         // gold
-  fout << GetElixirAmount() << endl; // elixirs
+  fout << "Stage Number: " << GetStageNum() << endl;     // stage number
+  fout << "Level: " << GetLevel() << endl;        // level
+  fout << "Current HP: " << GetCurrentHp() << endl;    // chp
+  fout << "Max HP: " << GetMaxHp() << endl;        // mhp
+  fout << "Attack: " << GetAttack() << endl;       // attack
+  fout << "Defense: " << GetDefense() << endl;      // def
+  fout << "Speed: " << GetSpeed() << endl;        // spd
+  fout << "EXP: " << GetExp() << endl;          // exp
+  fout << "Gold: " << GetGold() << endl;         // gold
+  fout << "Elixirs: " << GetElixirAmount() << endl; // elixirs
 }
 
 int Lord::GetWeaponMight(string weapon) // attack value for each weapon
